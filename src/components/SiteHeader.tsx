@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { href: '/why-it-matters', label: 'Why It Matters' },
   { href: '/data-basics', label: 'Data Basics' },
   { href: '/variables-relationships', label: 'Variables & Relationships' },
+  { href: '/multivariate-analysis', label: 'Multivariate Analysis' },
   { href: '/cases', label: 'Case Studies' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/frameworks', label: 'Frameworks' },
@@ -33,9 +34,7 @@ export default function SiteHeader() {
           >
             <BarChart2 size={20} className="text-teal-600" aria-hidden="true" />
             HR Analytics
-            <span className="text-slate-400 font-sans font-normal text-sm hidden sm:inline">
-              MAN 6316
-            </span>
+
           </Link>
 
           {/* Desktop nav */}
