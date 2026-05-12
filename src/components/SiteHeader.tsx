@@ -8,6 +8,7 @@ import { Menu, X, BarChart2 } from 'lucide-react'
 const NAV_LINKS = [
   { href: '/why-it-matters', label: 'Why It Matters' },
   { href: '/data-basics', label: 'Data Basics' },
+  { href: '/variables-relationships', label: 'Variables & Relationships' },
   { href: '/cases', label: 'Case Studies' },
   { href: '/glossary', label: 'Glossary' },
   { href: '/frameworks', label: 'Frameworks' },
