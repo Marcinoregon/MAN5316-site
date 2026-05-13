@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CallOut from '@/components/CallOut'
+import MultivariateQuiz from '@/components/MultivariateQuiz'
 
 export const metadata: Metadata = {
   title: 'Multivariate Analysis',
@@ -401,6 +402,22 @@ export default function MultivariateAnalysisPage() {
           a coefficient means, why a control variable matters, and how to read an odds ratio
           makes you a far more effective consumer and communicator of analytical work.
         </CallOut>
+      </section>
+
+      {/* ── Knowledge Check ── */}
+      <section aria-labelledby="section-quiz" className="mb-12">
+        <h2
+          id="section-quiz"
+          className="font-serif text-2xl font-semibold text-slate-900 mb-2"
+        >
+          Knowledge Check
+        </h2>
+        <p className="text-slate-700 leading-relaxed mb-6">
+          Five questions covering control variables, dummy variables, reading regression
+          coefficients, interpreting odds ratios, and choosing between linear and logistic
+          regression. Select an answer to reveal the explanation.
+        </p>
+        <MultivariateQuiz />
       </section>
     </div>
   )
