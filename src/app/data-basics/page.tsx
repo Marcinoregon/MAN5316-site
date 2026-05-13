@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CallOut from '@/components/CallOut'
+import DataBasicsQuiz from '@/components/DataBasicsQuiz'
 
 export const metadata: Metadata = {
   title: 'Data Basics',
@@ -529,6 +530,21 @@ export default function DataBasicsPage() {
             score to their structured interview score even though both are measured differently.
           </p>
         </div>
+      </section>
+
+      {/* ── Knowledge Check ── */}
+      <section aria-labelledby="section-quiz" className="mb-12">
+        <h2
+          id="section-quiz"
+          className="font-serif text-2xl font-semibold text-slate-900 mb-2"
+        >
+          Knowledge Check
+        </h2>
+        <p className="text-slate-700 leading-relaxed mb-6">
+          Five questions covering mean, median, mode, data types, standard deviation, and
+          the normal distribution. Select an answer to reveal the explanation.
+        </p>
+        <DataBasicsQuiz />
       </section>
     </div>
   )
