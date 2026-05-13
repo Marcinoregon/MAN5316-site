@@ -9,15 +9,15 @@ export interface QuizQuestion {
 export const QUIZ_QUESTIONS: QuizQuestion[] = [
   {
     id: 1,
-    question: "What is the primary difference between 'turnover' and 'attrition'?",
+    question: "An HR analyst wants to calculate the average of employees' survey responses on a scale of 1–5 (Strongly Disagree to Strongly Agree). What type of data is this, and what should the analyst be cautious about?",
     options: [
-      "Turnover includes only voluntary departures; attrition includes all departures.",
-      "Turnover counts all departures; attrition typically refers to voluntary departures when positions are not backfilled.",
-      "Turnover measures the speed of departures, while attrition measures the cost.",
-      "There is no difference; the terms are statistically identical."
+      "Ratio data — the mean is perfectly valid because the scale starts at 1.",
+      "Nominal data — no mathematical operations are appropriate.",
+      "Ordinal data — the mean is commonly used but assumes equal intervals between scale points, which isn't mathematically guaranteed.",
+      "Interval data — a score of 4 is exactly twice as meaningful as a score of 2."
     ],
-    correctAnswer: 1,
-    explanation: "Turnover counts all departures (voluntary and involuntary). Attrition typically refers to voluntary departures and is often used when those specific positions aren't immediately replaced."
+    correctAnswer: 2,
+    explanation: "Likert-type survey scales (1–5, 1–7) produce ordinal data. The categories have a meaningful order, but there is no guarantee that the psychological gap between each point is equal. Computing a mean is a widely accepted and defensible practice, but analysts should acknowledge this assumption. Ratio data requires a true zero point (e.g., training hours), which this scale lacks."
   },
   {
     id: 2,
@@ -141,27 +141,27 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
   },
   {
     id: 12,
-    question: "Which of the following is considered 'Regrettable Turnover'?",
+    question: "An HR dataset shows that the mean time-to-productivity for new hires is 47 days, but several new hires took over 180 days. What is the most appropriate way to handle these extreme values before reporting?",
     options: [
-      "Firing an employee for poor performance.",
-      "A high-performing engineer resigning to join a competitor.",
-      "An employee retiring after 30 years of service.",
-      "Eliminating a position during a corporate restructuring."
+      "Delete them — extreme values are always data entry errors.",
+      "Replace them with the mean to normalize the distribution.",
+      "Investigate whether they are legitimate data points; if so, report both the mean and median and note the skew rather than removing them.",
+      "Always exclude any value more than 30 days from the mean before analysis."
     ],
-    correctAnswer: 1,
-    explanation: "Regrettable turnover involves the voluntary departure of an employee the organization wanted to keep, usually a high performer or high-potential individual."
+    correctAnswer: 2,
+    explanation: "Extreme values (outliers) should never be automatically deleted. First, investigate whether they represent real cases (e.g., complex roles with long ramp times) or data errors. If legitimate, they carry important information. Reporting both the mean and median — and flagging the skewed distribution — gives stakeholders a more complete and honest picture than silently removing inconvenient data points."
   },
   {
     id: 13,
-    question: "What is the primary difference between Time-to-Fill and Time-to-Hire?",
+    question: "An HR team conducts an engagement survey and achieves a 40% response rate. The results show high satisfaction scores. What data quality concern should they flag before presenting the findings to leadership?",
     options: [
-      "Time-to-fill measures the recruiter's speed; time-to-hire measures the hiring manager's speed.",
-      "Time-to-fill starts when a requisition is opened; time-to-hire starts when the candidate enters the pipeline.",
-      "Time-to-fill measures internal transfers; time-to-hire measures external candidates.",
-      "They are exactly the same metric."
+      "A 40% response rate is too low to calculate a mean.",
+      "Non-response bias — employees who chose not to respond may have systematically different views, meaning the results could overstate actual satisfaction.",
+      "The survey should be discarded entirely because less than 50% responded.",
+      "High satisfaction scores always indicate data manipulation."
     ],
     correctAnswer: 1,
-    explanation: "Time-to-fill is a business metric starting from the day the job opens. Time-to-hire is a recruiter process metric starting from the day the candidate applies or is sourced."
+    explanation: "Non-response bias (also called sample bias) occurs when those who respond to a survey differ systematically from those who don't. In engagement surveys, disengaged or dissatisfied employees are less likely to respond — meaning a 40% response rate may produce artificially positive results. Analysts should flag this limitation explicitly and, where possible, compare respondent demographics to the full workforce to assess how representative the sample is."
   },
   {
     id: 14,
