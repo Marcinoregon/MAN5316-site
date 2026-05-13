@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { href: '/frameworks', label: 'Frameworks' },
   { href: '/exercises', label: 'Exercises' },
   { href: '/quiz', label: 'Quiz' },
+  { href: '/case-student', label: 'Case Student' },
   { href: '/about', label: 'About' },
 ]
 
