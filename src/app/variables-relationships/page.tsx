@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import CallOut from '@/components/CallOut'
+import VariablesQuiz from '@/components/VariablesQuiz'
 
 export const metadata: Metadata = {
   title: 'Variables & Relationships',
@@ -468,6 +469,22 @@ export default function VariablesRelationshipsPage() {
             </table>
           </div>
         </div>
+      </section>
+
+      {/* ── Knowledge Check ── */}
+      <section aria-labelledby="section-quiz" className="mb-12">
+        <h2
+          id="section-quiz"
+          className="font-serif text-2xl font-semibold text-slate-900 mb-2"
+        >
+          Knowledge Check
+        </h2>
+        <p className="text-slate-700 leading-relaxed mb-6">
+          Five questions covering independent and dependent variables, correlation,
+          spurious relationships, and the distinction between correlation and causation.
+          Select an answer to reveal the explanation.
+        </p>
+        <VariablesQuiz />
       </section>
     </div>
   )
