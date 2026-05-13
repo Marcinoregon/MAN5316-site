@@ -121,22 +121,7 @@ export default function AboutPage() {
         </ul>
       </section>
 
-      {/* Professor note */}
-      <section className="p-6 border-2 border-teal-200 rounded-lg bg-teal-50" aria-labelledby="about-prof">
-        <h2 id="about-prof" className="font-serif text-xl font-semibold text-teal-900 mb-3">
-          For Instructors: Editing This Site
-        </h2>
-        <p className="text-sm text-teal-800 leading-relaxed mb-3">
-          All case content and long-form prose is in <code className="bg-teal-100 px-1 rounded">/src/app/</code> as TypeScript files. Prose is JSX — editable with basic text knowledge.
-          The glossary data is in <code className="bg-teal-100 px-1 rounded">/src/lib/glossary.ts</code> and
-          the case registry is in <code className="bg-teal-100 px-1 rounded">/src/lib/cases.ts</code>.
-          Refer to <code className="bg-teal-100 px-1 rounded">README.md</code> for detailed editing guidance.
-        </p>
-        <p className="text-sm text-teal-800">
-          Items flagged for instructor review before publication are in{' '}
-          <code className="bg-teal-100 px-1 rounded">CONTENT_CHECKLIST.md</code>.
-        </p>
-      </section>
+      {/* Professor note removed */}
     </div>
   )
 }

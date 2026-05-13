@@ -246,5 +246,131 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     ],
     correctAnswer: 1,
     explanation: "R-squared measures how much of the variation in the dependent variable (like performance) can be explained by the independent variables (like tenure and training). An R² of 0.30 means the model explains 30% of the variance."
+  },
+
+  // ── Data Basics ──────────────────────────────────────────────────────────
+  {
+    id: 21,
+    question: "An HR report shows a mean salary of $112,000 and a median salary of $74,000 across a 200-person company. What does this gap most likely indicate?",
+    options: [
+      "The data was collected incorrectly and should be discarded.",
+      "A small number of very high earners — such as executives — are pulling the mean upward, making the median a better representation of the typical employee's pay.",
+      "Most employees earn close to $112,000.",
+      "The median is always higher than the mean in salary data."
+    ],
+    correctAnswer: 1,
+    explanation: "When the mean is significantly higher than the median, the distribution is right-skewed — a small number of very high values (like executive salaries) are pulling the average up. The median is unaffected by those outliers and better represents the 'typical' employee. In skewed salary data, always report the median as the primary measure of central tendency."
+  },
+  {
+    id: 22,
+    question: "A survey asks employees to rate their work-life balance on a scale of 1 (Poor) to 5 (Excellent). What type of data is this, and what does that mean for analysis?",
+    options: [
+      "Ratio data — all arithmetic operations including multiplication are valid.",
+      "Nominal data — you can only report the most common response.",
+      "Ordinal data — the responses have a meaningful order, but the intervals between scale points may not be equal.",
+      "Interval data — a rating of 4 is exactly twice as good as a rating of 2."
+    ],
+    correctAnswer: 2,
+    explanation: "Likert-type scales (1–5, 1–7) produce ordinal data. The categories have a clear rank order, but there is no guarantee the psychological gap between 'Poor' and 'Fair' equals the gap between 'Good' and 'Excellent.' Computing a mean is a common and defensible shortcut, but it rests on the simplifying assumption that the intervals are equal — which is not mathematically guaranteed. Ratio data requires a true zero point, which this scale does not have."
+  },
+  {
+    id: 23,
+    question: "In a normally distributed dataset of employee performance scores with a mean of 75 and a standard deviation of 8, approximately what percentage of employees score between 67 and 83?",
+    options: [
+      "Approximately 99.7%",
+      "Approximately 95%",
+      "Approximately 68%",
+      "Approximately 50%"
+    ],
+    correctAnswer: 2,
+    explanation: "67 and 83 are each exactly one standard deviation from the mean (75 − 8 = 67; 75 + 8 = 83). According to the empirical rule (68–95–99.7), approximately 68% of values in a normal distribution fall within ±1 standard deviation of the mean. This is the 'typical range' — the band that captures roughly two-thirds of the workforce."
+  },
+
+  // ── Variables & Relationships ─────────────────────────────────────────────
+  {
+    id: 24,
+    question: "A researcher finds that ice cream sales and employee voluntary turnover both peak in July. The correlation between the two is r = +0.81. What is the most accurate conclusion?",
+    options: [
+      "Eating ice cream causes employees to quit.",
+      "High turnover causes organizations to buy more ice cream.",
+      "The strong correlation is likely spurious — a third variable (summer seasonality) independently drives both patterns.",
+      "An r of 0.81 is high enough to establish a causal link between the two variables."
+    ],
+    correctAnswer: 2,
+    explanation: "This is a classic spurious correlation. Summer seasonality independently drives both ice cream consumption (warm weather) and turnover spikes (fiscal cycles, summer job market activity). No matter how high the correlation coefficient, correlation alone never establishes causation. A strong r only tells you two variables move together — not why, and not that one produces the other."
+  },
+  {
+    id: 25,
+    question: "An analyst studying whether flexible scheduling reduces absenteeism wants to include 'employee tenure' in the model even though tenure is not the main variable of interest. What role does tenure play?",
+    options: [
+      "Tenure is the dependent variable — the outcome the analyst is trying to predict.",
+      "Tenure is a control variable — included because it likely influences absenteeism and could confound the relationship between scheduling flexibility and attendance.",
+      "Tenure is a dummy variable that must be coded 0 or 1.",
+      "Tenure should be excluded because adding more variables always reduces model accuracy."
+    ],
+    correctAnswer: 1,
+    explanation: "A control variable is included in a model not because it is the focus of the analysis, but because it is known to influence the outcome and could confound results if omitted. Tenure affects absenteeism independently — newer employees may have different attendance patterns than veterans. Controlling for tenure lets the analyst estimate the unique effect of scheduling flexibility among employees at the same tenure level, producing a less biased estimate."
+  },
+  {
+    id: 26,
+    question: "An HR analyst reports a correlation of r = −0.42 between the number of manager 1-on-1 meetings per month and employee burnout scores. How should this be interpreted?",
+    options: [
+      "A strong positive relationship — more meetings mean more burnout.",
+      "A moderate negative relationship — employees who have more 1-on-1s tend to report lower burnout, though the association is not perfect and causation is not established.",
+      "The result is not statistically meaningful because r is below 0.50.",
+      "Manager 1-on-1 meetings cause burnout to decrease by 42%."
+    ],
+    correctAnswer: 1,
+    explanation: "r = −0.42 indicates a moderate negative linear relationship: as the number of 1-on-1 meetings increases, burnout scores tend to decrease. By conventional benchmarks, |r| between 0.30 and 0.50 is considered a moderate and practically meaningful relationship in behavioral data. However, correlation does not establish causation — it could be that less burned-out employees are more likely to accept 1-on-1 invitations (reverse causation), or that a supportive manager culture drives both. Additional research design is needed to claim a causal effect."
+  },
+
+  // ── Multivariate Analysis ─────────────────────────────────────────────────
+  {
+    id: 27,
+    question: "A regression model predicting employee performance scores includes 'Department' as a variable with five categories (Sales, HR, Finance, Operations, Legal). How many dummy variables are needed to represent Department correctly?",
+    options: [
+      "Five — one for each department.",
+      "Four — one per department minus one reference category.",
+      "One — coded 1 through 5 for each department.",
+      "None — categorical variables cannot be used in regression."
+    ],
+    correctAnswer: 1,
+    explanation: "For a categorical variable with k categories, you create k−1 dummy variables. With five departments, you create four dummies and designate the fifth as the reference category. Each dummy's coefficient then represents the difference in performance compared to the reference department, holding other variables constant. Creating five dummies causes the 'dummy variable trap' (perfect multicollinearity), which breaks the regression. Coding departments 1–5 falsely implies a numerical ordering that does not exist."
+  },
+  {
+    id: 28,
+    question: "A linear regression model predicts annual engagement scores (0–100). The coefficient for 'Training_Hours' is β = 1.4, with p = 0.01. What does this mean?",
+    options: [
+      "Training hours explain 1.4% of the variance in engagement.",
+      "Each additional training hour is associated with a 1.4-point increase in engagement scores on average, holding all other variables in the model constant, and this effect is statistically significant.",
+      "There is a 1% probability that training hours affect engagement.",
+      "The model predicts that engagement will reach 1.4 out of 100 without any training."
+    ],
+    correctAnswer: 1,
+    explanation: "A regression coefficient (β) represents the expected change in the outcome for a one-unit increase in the predictor, with all other variables held constant. Here, each additional hour of training is associated with a 1.4-point increase in the engagement score. The p-value of 0.01 is well below the conventional 0.05 threshold, meaning this relationship is statistically significant — it is very unlikely to be due to chance. The coefficient does not represent variance explained (that is R²) or a probability."
+  },
+  {
+    id: 29,
+    question: "An HR team uses logistic regression to predict voluntary turnover. The odds ratio for 'received_promotion' is 0.38. What is the correct interpretation?",
+    options: [
+      "Employees who received a promotion are 38% more likely to leave.",
+      "Receiving a promotion is associated with 62% lower odds of voluntary turnover compared to employees who were not promoted.",
+      "The model explains 38% of the variance in turnover.",
+      "Promoted employees have a 38-point higher engagement score."
+    ],
+    correctAnswer: 1,
+    explanation: "In logistic regression, an odds ratio below 1.0 means the predictor is associated with decreased odds of the outcome. OR = 0.38 means that promoted employees have odds of leaving that are 62% lower than non-promoted employees (1 − 0.38 = 0.62, a 62% reduction). Odds ratios do not represent percentage-point changes in probability, they do not measure variance explained (that is pseudo-R²), and they are not the same as regression coefficients from a linear model."
+  },
+  {
+    id: 30,
+    question: "Which of the following HR research questions requires logistic regression rather than linear regression?",
+    options: [
+      "By how many points does each additional year of tenure increase an employee's performance rating on a 100-point scale?",
+      "What is the predicted annual salary for an employee based on their job level and department?",
+      "What is the probability that a new hire will voluntarily leave within their first 90 days, given their onboarding satisfaction score and commute time?",
+      "How does the number of training hours predict engagement scores on a 0–100 scale?"
+    ],
+    correctAnswer: 2,
+    explanation: "Logistic regression is used when the dependent variable is binary — in this case, whether a new hire leaves within 90 days (yes/no). It models the probability of a binary outcome. The other three questions involve continuous outcomes (performance rating, salary in dollars, engagement score on a scale) — those call for linear regression. Using linear regression on a binary outcome is technically invalid because it can produce predicted probabilities below 0 or above 1, which are mathematically meaningless."
   }
 ];
