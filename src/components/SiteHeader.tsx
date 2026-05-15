@@ -14,6 +14,8 @@ const NAV_LINKS = [
   { href: '/glossary', label: 'Glossary' },
   { href: '/frameworks', label: 'Frameworks' },
   { href: '/exercises', label: 'Exercises' },
+  { href: '/claude-excel', label: 'Claude + Excel' },
+  { href: '/pivot-tables', label: 'Pivot Tables' },
   { href: '/quiz', label: 'Quiz' },
   { href: '/about', label: 'About' },
 ]
