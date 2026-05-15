@@ -4,7 +4,7 @@ import CallOut from '@/components/CallOut'
 
 export const metadata: Metadata = {
   title: 'Pivot Tables',
-  description: 'A visual, step-by-step guide to building pivot tables in Google Sheets — no Excel required.',
+  description: 'A visual, step-by-step guide to building pivot tables in Microsoft Excel — using the same HR data as your coursework.',
 }
 
 /* ── Raw Data SVG ─────────────────────────────────────────────────────────── */
@@ -115,7 +115,7 @@ function FieldEditorSVG() {
     { label: 'Filters', y: 254, color: '#b45309', lightColor: '#fef3c7', example: 'Department (optional)' },
   ]
   return (
-    <svg viewBox="0 0 300 316" className="w-full max-w-xs mx-auto block" role="img" aria-label="Google Sheets pivot table editor panel showing Rows, Columns, Values, and Filters zones">
+    <svg viewBox="0 0 300 316" className="w-full max-w-xs mx-auto block" role="img" aria-label="Excel PivotTable Fields panel showing Rows, Columns, Values, and Filters zones">
       {/* Panel background */}
       <rect x={0} y={0} width={300} height={316} fill="#1e293b" rx={8} />
       <text x={150} y={28} textAnchor="middle" fontSize={12} fontFamily="Inter,sans-serif" fill="white" fontWeight="700">Pivot Table Editor</text>
@@ -185,8 +185,8 @@ export default function PivotTablesPage() {
         </h1>
         <p className="text-lg text-slate-600 leading-relaxed">
           A Pivot Table takes a long list of raw data and summarizes it by group — instantly.
-          This guide shows you how to build one in <strong>Google Sheets</strong> (free,
-          no installation needed) using the same HR data structure as your coursework.
+          This guide shows you how to build one in <strong>Microsoft Excel</strong> using
+          the same HR data structure as your coursework.
         </p>
       </header>
 
@@ -221,9 +221,9 @@ export default function PivotTablesPage() {
           B. The Four Zones — What Goes Where
         </h2>
         <p className="text-slate-700 leading-relaxed mb-6">
-          When you create a Pivot Table in Google Sheets, a panel appears on the right side
-          of the screen. It has four drop zones. Understanding what each one does is the whole
-          skill.
+          When you create a PivotTable in Excel, a <strong>PivotTable Fields</strong> panel
+          appears on the right side of the screen. It has four drop zones. Understanding
+          what each one does is the whole skill.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
@@ -255,8 +255,8 @@ export default function PivotTablesPage() {
           C. Step-by-Step: Build One Right Now
         </h2>
         <p className="text-slate-700 leading-relaxed mb-6">
-          Open your HR dataset in Google Sheets and follow these steps. You&rsquo;ll have a
-          working Pivot Table in under two minutes.
+          Open your HR dataset in Excel and follow these steps. You&rsquo;ll have a
+          working PivotTable in under two minutes.
         </p>
 
         <div className="space-y-4">
@@ -269,43 +269,47 @@ export default function PivotTablesPage() {
             header names in row 1.
           </StepCard>
 
-          <StepCard step={2} title="Insert → Pivot Table">
-            In the top menu, click <strong>Insert</strong>, then <strong>Pivot Table</strong>.
-            A dialog box will ask where to put it — choose <strong>New Sheet</strong>. Click
-            Create. Google Sheets will open a blank new tab with the Pivot Table editor on the right.
+          <StepCard step={2} title="Insert → PivotTable">
+            In the top menu, click <strong>Insert</strong>, then <strong>PivotTable</strong>.
+            A dialog box will ask where to put it — select <strong>New Worksheet</strong> and
+            click <strong>OK</strong>. Excel opens a blank sheet with the PivotTable Fields
+            panel on the right.
           </StepCard>
 
-          <StepCard step={3} title="Add a Row field">
-            In the Pivot Table editor panel, find <strong>Rows</strong> and click{' '}
-            <strong>Add</strong>. Choose the column you want to group by — for example,{' '}
-            <em>Department</em>. One row will appear in the table for each unique department.
+          <StepCard step={3} title="Drag a field into Rows">
+            In the PivotTable Fields panel, find the column you want to group by — for
+            example, <em>Department</em> — and drag it into the <strong>Rows</strong> box
+            at the bottom of the panel (or check the checkbox and Excel places it
+            automatically). One row will appear for each unique department.
           </StepCard>
 
-          <StepCard step={4} title="Add a Column field (optional)">
-            Click <strong>Add</strong> next to <strong>Columns</strong> and choose a second
-            grouping variable — for example, <em>Gender</em>. The table will now split each
-            row into a Female column and a Male column.
+          <StepCard step={4} title="Drag a field into Columns (optional)">
+            Drag a second grouping variable — for example, <em>Gender</em> — into the{' '}
+            <strong>Columns</strong> box. The table will now split each row into a Female
+            column and a Male column side by side.
           </StepCard>
 
-          <StepCard step={5} title="Add a Value field and set the calculation">
-            Click <strong>Add</strong> next to <strong>Values</strong>. Choose the numeric
-            column you want to calculate — for example, <em>Annual Wage</em>. By default,
-            Google Sheets will use <strong>SUM</strong>. Click the dropdown next to it and
-            change it to <strong>AVERAGE</strong> or <strong>Custom → Standard Deviation</strong>,
-            depending on what your analysis requires.
+          <StepCard step={5} title="Drag a field into Values and set the calculation">
+            Drag the numeric column you want to calculate — for example, <em>Annual Wage</em>
+            — into the <strong>Values</strong> box. By default, Excel uses{' '}
+            <strong>Sum</strong>. Click the field name in the Values box, choose{' '}
+            <strong>Value Field Settings</strong>, and change it to <strong>Average</strong>{' '}
+            or <strong>StdDev</strong> depending on what your analysis requires.
           </StepCard>
 
           <StepCard step={6} title="Read and verify your results">
-            Your Pivot Table is live. Double-click any cell to see the raw rows that fed
-            into that number — Google Sheets will open a new sheet showing only those records.
-            This is the fastest way to verify the table is reading the right data.
+            Your PivotTable is live. Double-click any value cell to see the raw rows that
+            fed into that number — Excel will open a new sheet showing only those records.
+            This is the fastest way to confirm the table is pulling from the right data.
           </StepCard>
         </div>
 
         <div className="mt-6">
-          <CallOut variant="caution" title="If the editor panel disappears">
-            Just click anywhere inside your Pivot Table. A small pencil icon will appear —
-            click it to reopen the editor. This catches a lot of students off guard.
+          <CallOut variant="caution" title="If the Fields panel disappears">
+            Click anywhere inside your PivotTable. The <strong>PivotTable Fields</strong>{' '}
+            panel will reappear on the right. If it still doesn&rsquo;t show, go to the{' '}
+            <strong>PivotTable Analyze</strong> tab in the ribbon and click{' '}
+            <strong>Field List</strong>.
           </CallOut>
         </div>
       </section>
@@ -382,22 +386,22 @@ export default function PivotTablesPage() {
 
         <div className="space-y-4">
           <VideoCard
-            title="Pivot Tables in Google Sheets — A to Z"
-            description="The most thorough beginner tutorial. Covers rows, columns, values, calculated fields, and grouping. Best if you want to understand the why, not just the how."
+            title="Excel Pivot Tables — Full Tutorial for Beginners"
+            description="The most thorough beginner walkthrough. Covers dragging fields, changing calculations, filtering, and formatting. Best if you want to understand the why, not just the how."
             duration="~15 min · Comprehensive"
-            searchQuery="Pivot Tables in Google Sheets A to Z tutorial"
+            searchQuery="Excel PivotTable full tutorial beginners"
           />
           <VideoCard
-            title="Unleash the Power of Pivot Tables (with practice sheet)"
-            description="Comes with a downloadable practice file in the description so you can follow along step-by-step. Great for hands-on learners."
-            duration="~12 min · Practice-based"
-            searchQuery="Unleash the Power of Pivot Tables Google Sheets tutorial"
+            title="Excel Pivot Tables in 10 Minutes (with practice file)"
+            description="Comes with a downloadable practice file so you can follow along directly with the instructor. Great for hands-on learners."
+            duration="~10 min · Practice-based"
+            searchQuery="Excel Pivot Tables 10 minutes practice file tutorial"
           />
           <VideoCard
-            title="Master Pivot Tables in 7 Minutes"
-            description="The fastest possible overview. Just rows, columns, and values — nothing extra. Use this if you're short on time or need a quick refresher before an assignment."
+            title="How to Create a Pivot Table in Excel — Step by Step"
+            description="The fastest possible overview. Just insert, drag fields, and read results — nothing extra. Use this if you're short on time or need a quick refresher before an assignment."
             duration="~7 min · Quick overview"
-            searchQuery="Master Pivot Tables Google Sheets 7 minutes"
+            searchQuery="How to create a pivot table in Excel step by step"
           />
         </div>
 
